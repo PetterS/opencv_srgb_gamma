@@ -30,7 +30,7 @@ inline float linear_to_srgb(float linear) {
 
 // Converts an OpenCV Mat with sRGB values in the range [0, 255] to
 // a float (CV_32FC3) OpenCV Mat in the range [0, 1].
-cv::Mat srgb_to_linear(const cv::Mat& mat) {
+static cv::Mat srgb_to_linear(const cv::Mat& mat) {
 	cv::Mat linear;
 	mat.convertTo(linear, CV_32FC3);
 	for (auto itr = linear.begin<cv::Vec<float, 3>>(); itr != linear.end<cv::Vec<float, 3>>();
@@ -44,7 +44,7 @@ cv::Mat srgb_to_linear(const cv::Mat& mat) {
 
 // Converts an OpenCV Mat with linear values in the range [0, 1] to
 // a 8-bit (CV_8UC3) OpenCV Mat in the range [0, 255].
-cv::Mat linear_to_srgb(const cv::Mat& linear) {
+static cv::Mat linear_to_srgb(const cv::Mat& linear) {
 	cv::Mat srgb(linear.rows, linear.cols, CV_8UC3);
 	for (int r = 0; r < linear.rows; ++r) {
 		for (int c = 0; c < linear.cols; ++c) {
