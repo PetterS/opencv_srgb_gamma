@@ -1,5 +1,8 @@
+Correct Gamma in OpenCV
+=======================
+
 It is (as far as I know) not possible to resize, blur, or do any other arithmetic on images in OpenCV.
-This repoitiry provides the missing code needed: transformations from sRGB to linear and back. This
+This repository provides the missing code needed: transformations from sRGB to linear and back. This
 takes the gamma into account.
 
 For an explanation and a lot more information about the problem, see
@@ -7,3 +10,6 @@ For an explanation and a lot more information about the problem, see
   * [Gamma error in picture scaling](http://web.archive.org/web/20160301042052/http://www.4p8.com/eric.brasseur/gamma.html)
 
 Code is available in C++ and Python.
+
+
+[See the Python notebook for examples.](https://github.com/PetterS/opencv_srgb_gamma/blob/master/OpenCV%20Gamma%20Test.ipynb)
