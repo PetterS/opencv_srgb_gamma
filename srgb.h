@@ -8,7 +8,7 @@ namespace vision {
 // the range [0, 1].
 inline float srgb_to_linear(float srgb) {
 	auto linear = srgb / 255.0f;
-	if (linear <= 0.4045f) {
+	if (linear <= 0.04045f) {
 		linear = linear / 12.92f;
 	} else {
 		linear = std::powf((linear + 0.055f) / 1.055f, 2.4f);
